@@ -12,7 +12,7 @@ Mobil, sebagai kendaraan pribadi, memainkan peran penting dalam kehidupan manusi
 
 <br>
 
-<div><img src="https://storage.googleapis.com/kaggle-datasets-images/245550/518395/0117a00b8cd590c31a8b83217458b3ce/dataset-cover.jpg?t=2019-06-25-10-19-42" width="500"/></div>
+<div><img src="img/dataset-cover.jpg" width="500"/></div>
 
 <br>
 
