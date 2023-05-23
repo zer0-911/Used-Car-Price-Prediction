@@ -8,7 +8,7 @@ Proyek ini membangun model machine learning yang dapat memprediksi harga mobil d
 
 ### Latar Belakang
 
-Mobil, sebagai kendaraan pribadi, memainkan peran penting dalam kehidupan manusia. Nilai dari setiap mobil tergantung pada merek, model, tahun produksi, jenis bahan bakar, kapasitas mesin, jumlah kilometer yang telah ditempuh, serta berbagai fitur dan spesifikasi lainnya
+Mobil, sebagai kendaraan pribadi, memainkan peran penting dalam kehidupan manusia. Nilai dari setiap mobil tergantung pada merek, model, tahun produksi, jenis bahan bakar, kapasitas mesin, jumlah kilometer yang telah ditempuh, serta berbagai fitur dan spesifikasi lainnya.
 
 <div style="text-align: center;">
 <br >
@@ -17,11 +17,9 @@ Mobil, sebagai kendaraan pribadi, memainkan peran penting dalam kehidupan manusi
 <figcaption>Gambar 1. Mobil</figcaption>
 <br>
 </div>
-Harga dari setiap mobil diukur dari nilai yang dimiliki oleh mobil tersebut. Namun, harga ini tidak selalu pasti dan sulit untuk melakukan prediksi akurat secara manual. Faktor ketidakpastian perlu dikurangi oleh para penjual maupun pembeli dengan membangun sistem prediksi yang dapat menentukan berapa harga beli yang pantas untuk karakteristik mobil tertentu.
+Harga dari setiap mobil diukur dari nilai yang dimiliki oleh mobil tersebut. Namun, harga ini tidak selalu pasti dan sulit untuk melakukan prediksi akurat secara manual [1]. Faktor ketidakpastian perlu dikurangi oleh para penjual maupun pembeli dengan membangun sistem prediksi yang dapat menentukan berapa harga beli yang pantas untuk karakteristik mobil tertentu.
 
 Dalam mencapai hal tersebut, maka dilakukan penelitian untuk memprediksi harga mobil menggunakan model machine learning. Diharapkan model ini mampu memprediksi harga sewa yang sesuai dengan harga pasar. Prediksi ini nantinya dijadikan acuan bagi penjual maupun pembeli dalam membeli moobil dengan harga yang tepat.
-
-Referensi : [Car’s Selling Price Prediction using Random Forest Machine Learning Algorithm](hhttps://papers-ssrn-com.translate.goog/sol3/papers.cfm?abstract_id=3702236&_x_tr_sl=en&_x_tr_tl=id&_x_tr_hl=id&_x_tr_pto=tc)
 
 ## Business Understanding
 
@@ -48,7 +46,7 @@ Proyek ini dibangun untuk penjual dengan karakteristik bisnis sebagai berikut :
 2. Menyiapkan data agar bisa digunakan dalam membangun model.
 3. Melakukan hyperparameter tuning menggunakan grid search dan membangun model regresi yang dapat memprediksi bilangan kontinu. ALgoritma yang dipakai dalam proyek ini adalah K-Nearest Neighbour, Random Forest, dan AdaBoost.
 
-## Data Understanding & Removing Outlier
+## Data Understanding
 
 Dataset yang digunakan dalam proyek ini merupakan data mobil yang ada di India. Dataset ini dapat diunduh di [Kaggle : Used Cars Price Prediction Dataset](https://www.kaggle.com/datasets/avikasliwal/used-cars-price-prediction).
 
@@ -106,37 +104,37 @@ Bivariate Analysis adalah menganalisis setiap fitur secara berpasangan.
 
 - Year Vs Mean Price
   <div style="text-align: center;"><div><img src="img/ba-1.png"   width="450"/></div><figcaption>Grafik 2. Year Vs Mean Price</figcaption><br/></div>
-  Analisis : Semakin baru tahun produksi mobil, maka harga jual mobil semakin tinggi.
+  Dari Grafik 2 dapat dilihat bahwa semakin baru tahun produksi mobil, maka harga jual mobil semakin tinggi.
 - Kilometers Driven Vs Mean Price
   <div style="text-align: center;"><div><img src="img/ba-2.png"   width="450"/></div><figcaption>Grafik 3. Kilometers Driven Vs Mean Price</figcaption><br/></div>
-  Analisis : Semakin tinggi jumlah kilometer yang telah ditempuh oleh mobil, maka harga jual mobil semakin rendah.
+  Dari Grafik 3 dapat dilihat Semakin tinggi jumlah kilometer yang telah ditempuh oleh mobil, maka harga jual mobil semakin rendah.
 - Fuel Type Vs Mean Price
   <div style="text-align: center;"><div><img src="img/ba-3.png"   width="450"/></div><figcaption>Grafik 4. Fuel Type Vs Mean Price</figcaption><br/></div>
-  Analisis : Mobil dengan bahan bakar diesel memiliki harga jual yang lebih tinggi dibandingkan dengan bahan bakar lainnya.
+  Dari Grafik 4 Mobil dengan bahan bakar diesel memiliki harga jual yang lebih tinggi dibandingkan dengan bahan bakar lainnya.
 - Transmission Vs Mean Price
   <div style="text-align: center;"><div><img src="img/ba-4.png"   width="450"/></div><figcaption>Grafik 5. Transmission Type Vs Mean Price</figcaption><br/></div>
-  Analisis : Mobil dengan transmisi otomatis memiliki harga jual yang lebih tinggi dibandingkan dengan transmisi manual.
+  Dari Grafik 5 Mobil dengan transmisi otomatis memiliki harga jual yang lebih tinggi dibandingkan dengan transmisi manual.
 - Owner Type Vs Mean Price
   <div style="text-align: center;"><div><img src="img/ba-5.png"   width="450"/></div><figcaption>Grafik 6. owner Type Vs Mean Price</figcaption><br/></div>
-  Analisis : Mobil dengan kepemilikan tangan pertama memiliki harga jual yang lebih tinggi dibandingkan dengan kepemilikan tangan kedua.
+  Dari Grafik 6 dapat dilihat bahwa mobil dengan kepemilikan tangan pertama memiliki harga jual yang lebih tinggi dibandingkan dengan kepemilikan tangan kedua.
 - Mileage Vs Mean Price
   <div style="text-align: center;"><div><img src="img/ba-6.png"   width="450"/></div><figcaption>Grafik 7. Mileage Vs Mean Price</figcaption><br/></div>
-  Analisis : Semakin tinggi jarak tempuh mobil per liter bahan bakar, maka harga jual mobil semakin rendah.
+  Dari Grafik 7 dapat dilihat semakin tinggi jarak tempuh mobil per liter bahan bakar, maka harga jual mobil semakin rendah.
 - Engine Vs Mean Price
   <div style="text-align: center;"><div><img src="img/ba-7.png"   width="450"/></div><figcaption>Grafik 8. Engine Vs Mean Price</figcaption><br/></div>
-  Analisis : Semakin besar kapasitas mesin mobil, maka harga jual mobil semakin tinggi.
+  Dari Grafik 8 dapat dilihat semakin besar kapasitas mesin mobil, maka harga jual mobil semakin tinggi.
 - Power Vs Mean Price
   <div style="text-align: center;"><div><img src="img/ba-8.png"   width="450"/></div><figcaption>Grafik 9. Power Vs Mean Price</figcaption><br/></div>
-  Analisis : Semakin besar daya mesin mobil, maka harga jual mobil semakin tinggi.
+  Dari Grafik 9 dapat dilihat semakin besar daya mesin mobil, maka harga jual mobil semakin tinggi.
 - Seats Vs Mean Price
   <div style="text-align: center;"><div><img src="img/ba-9.png"   width="450"/></div><figcaption>Grafik 10. Seats Vs Mean Price</figcaption><br/></div>
-  Analisis : Semakin banyak jumlah kursi mobil, maka harga jual mobil semakin tinggi.
+  Dari Grafik 10 dapat dilihat bahwasanya semakin banyak jumlah kursi mobil, maka harga jual mobil semakin tinggi.
 - Company Vs Mean Price
-  <div style="text-align: center;"><div><img src="img/ba-10.png"   width="450"/></div><figcaption>Grafik 10. Company Vs Mean Price</figcaption><br/></div>
-  Analisis : Mobil dengan merek Jeep memiliki harga jual yang lebih tinggi dibandingkan dengan merek lainnya.
+  <div style="text-align: center;"><div><img src="img/ba-10.png"   width="450"/></div><figcaption>Grafik 11. Company Vs Mean Price</figcaption><br/></div>
+  Dari Grafik 11 dapat dilihat bahwa mobil dengan merek Jeep memiliki harga jual yang lebih tinggi dibandingkan dengan merek lainnya.
 - Location
-  <div style="text-align: center;"><div><img src="img/ba-11.png"   width="450"/></div><figcaption>Grafik 11. Location Vs Mean Price</figcaption><br/></div>
-  Analisis : Mobil yang dijual di kota Coimbatore memiliki harga jual yang lebih tinggi dibandingkan dengan kota lainnya.
+  <div style="text-align: center;"><div><img src="img/ba-11.png"   width="450"/></div><figcaption>Grafik 12. Location Vs Mean Price</figcaption><br/></div>
+  Dari Grafik 11 dapat dilihat bahwa mobil yang dijual di kota Coimbatore memiliki harga jual yang lebih tinggi dibandingkan dengan kota lainnya.
 
 ## Data preparation
 
@@ -199,6 +197,16 @@ Berikut hasil evaluasi pada proyek ini :
 - Mean Squared Error (MSE)
 - <div style="text-align: center;"><div><img src="img/mse.png" width="300"/></div><figcaption>Grafik 12. Mean Squared Error</figcaption><br/></div>
 
-## Kesimpulan
+Dari hasil evaluasi dapat dilihat bahwa model dengan algoritma Random Forest memiliki akurasi lebih tinggi dan tingkat error lebih kecil dibandingkan algoritma lainnya dalam proyek ini.
 
-Dari hasil evaluasi dapat dilihat bahwa model dengan algoritma Random Forest memiliki akurasi lebih tinggi tinggi dan tingkat error lebih kecil dibandingkan algoritma lainnya dalam proyek ini.
+## Conclusion
+
+Dari hasil evaluasi yang dilakukan, dapat disimpulkan bahwa model dengan menggunakan algoritma Random Forest memberikan performa yang lebih baik dibandingkan dengan algoritma KNN dan Boosting dalam melakukan prediksi harga mobil. Model Random Forest memiliki akurasi sebesar 0.923833, yang lebih tinggi dibandingkan dengan akurasi KNN (0.907578) dan Boosting (0.799076).
+
+Selain akurasi yang lebih tinggi, model Random Forest juga memiliki tingkat error yang lebih kecil, yang menunjukkan kemampuannya dalam mengurangi kesalahan prediksi. Hal ini menjadikan model Random Forest sebagai pilihan yang baik untuk digunakan dalam proyek ini untuk melakukan prediksi harga mobil.
+
+Namun, penting untuk dicatat bahwa kesimpulan ini didasarkan pada evaluasi yang dilakukan dalam proyek ini. Ketika menerapkan model pada proyek atau situasi yang berbeda, hasilnya dapat bervariasi. Oleh karena itu, perlu dilakukan evaluasi tambahan dan penyesuaian model sesuai dengan kebutuhan dan karakteristik data yang spesifik.
+
+## References
+
+[1] Pandey, Abhishek and Rastogi, Vanshika and Singh, Sanika, Car’s Selling Price Prediction using Random Forest Machine Learning Algorithm (March 1, 2020). 5th International Conference on Next Generation Computing Technologies (NGCT-2019), Available at SSRN: https://ssrn.com/abstract=3702236 or http://dx.doi.org/10.2139/ssrn.3702236
