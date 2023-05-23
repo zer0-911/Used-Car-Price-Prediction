@@ -10,15 +10,18 @@ Proyek ini membangun model machine learning yang dapat memprediksi harga mobil d
 
 Mobil, sebagai kendaraan pribadi, memainkan peran penting dalam kehidupan manusia. Nilai dari setiap mobil tergantung pada merek, model, tahun produksi, jenis bahan bakar, kapasitas mesin, jumlah kilometer yang telah ditempuh, serta berbagai fitur dan spesifikasi lainnya
 
+<div style="text-align: center;">
+<br >
+
+<div><img src="img/dataset-cover.jpg" width="500" /></div>
+<figcaption>Gambar 1. Mobil</figcaption>
 <br>
-
-<div><img src="img/dataset-cover.jpg" width="500"/></div>
-
-<br>
-
+</div>
 Harga dari setiap mobil diukur dari nilai yang dimiliki oleh mobil tersebut. Namun, harga ini tidak selalu pasti dan sulit untuk melakukan prediksi akurat secara manual. Faktor ketidakpastian perlu dikurangi oleh para penjual maupun pembeli dengan membangun sistem prediksi yang dapat menentukan berapa harga beli yang pantas untuk karakteristik mobil tertentu.
 
 Dalam mencapai hal tersebut, maka dilakukan penelitian untuk memprediksi harga mobil menggunakan model machine learning. Diharapkan model ini mampu memprediksi harga sewa yang sesuai dengan harga pasar. Prediksi ini nantinya dijadikan acuan bagi penjual maupun pembeli dalam membeli moobil dengan harga yang tepat.
+
+Referensi : [Car’s Selling Price Prediction using Random Forest Machine Learning Algorithm](hhttps://papers-ssrn-com.translate.goog/sol3/papers.cfm?abstract_id=3702236&_x_tr_sl=en&_x_tr_tl=id&_x_tr_hl=id&_x_tr_pto=tc)
 
 ## Business Understanding
 
@@ -77,7 +80,10 @@ Univariate Analysis adalah menganalisis setiap fitur secara terpisah.
 
 #### Analisis sebaran pada setiap fitur numerik
 
+<div style="text-align: center;">
 <div><img src="img/ua-1.png" width="450"/></div><br />
+<figcaption>Grafik 1. Analisis Numerik (Univariate Analysis)</figcaption>
+</div>
 Berikut analisis dari grafik di atas :
 
 - Sebagian besar mobil dibuat sekitar tahun 2015.
@@ -86,35 +92,51 @@ Berikut analisis dari grafik di atas :
 
 #### Analisis sebaran pada setiap fitur kategorik
 
+<div style="text-align: center;">
 <div><img src="img/ua-2.png" width="450"/></div><br />
+<figcaption>Grafik 2. Analisis Kategorik (Univariate Analysis)</figcaption>
+</div>
+Analisis : Sebagian besar mobil bermerk Maruti, Hyundai, Honda, Toyota, dan Mahindra.
 
 ### Bivariate Analysis
 
-Biavariate Analysis adalah menganalisis setiap fitur secara berpasangan.
+Bivariate Analysis adalah menganalisis setiap fitur secara berpasangan.
 
 #### Analisis korelasi antar fitur numerik
 
 - Year Vs Mean Price
-- <div><img src="img/ba-1.png" width="450"/></div><br />
+  <div style="text-align: center;"><div><img src="img/ba-1.png"   width="450"/></div><figcaption>Grafik 2. Year Vs Mean Price</figcaption><br/></div>
+  Analisis : Semakin baru tahun produksi mobil, maka harga jual mobil semakin tinggi.
 - Kilometers Driven Vs Mean Price
-- <div><img src="img/ba-2.png" width="450"/></div><br />
+  <div style="text-align: center;"><div><img src="img/ba-2.png"   width="450"/></div><figcaption>Grafik 3. Kilometers Driven Vs Mean Price</figcaption><br/></div>
+  Analisis : Semakin tinggi jumlah kilometer yang telah ditempuh oleh mobil, maka harga jual mobil semakin rendah.
 - Fuel Type Vs Mean Price
-- <div><img src="img/ba-3.png" width="450"/></div><br />
+  <div style="text-align: center;"><div><img src="img/ba-3.png"   width="450"/></div><figcaption>Grafik 4. Fuel Type Vs Mean Price</figcaption><br/></div>
+  Analisis : Mobil dengan bahan bakar diesel memiliki harga jual yang lebih tinggi dibandingkan dengan bahan bakar lainnya.
 - Transmission Vs Mean Price
-- <div><img src="img/ba-4.png" width="450"/></div><br />
+  <div style="text-align: center;"><div><img src="img/ba-4.png"   width="450"/></div><figcaption>Grafik 5. Transmission Type Vs Mean Price</figcaption><br/></div>
+  Analisis : Mobil dengan transmisi otomatis memiliki harga jual yang lebih tinggi dibandingkan dengan transmisi manual.
 - Owner Type Vs Mean Price
-- <div><img src="img/ba-5.png" width="450"/></div><br />
+  <div style="text-align: center;"><div><img src="img/ba-5.png"   width="450"/></div><figcaption>Grafik 6. owner Type Vs Mean Price</figcaption><br/></div>
+  Analisis : Mobil dengan kepemilikan tangan pertama memiliki harga jual yang lebih tinggi dibandingkan dengan kepemilikan tangan kedua.
 - Mileage Vs Mean Price
-- <div><img src="img/ba-6.png" width="450"/></div><br />
+  <div style="text-align: center;"><div><img src="img/ba-6.png"   width="450"/></div><figcaption>Grafik 7. Mileage Vs Mean Price</figcaption><br/></div>
+  Analisis : Semakin tinggi jarak tempuh mobil per liter bahan bakar, maka harga jual mobil semakin rendah.
 - Engine Vs Mean Price
-- <div><img src="img/ba-7.png" width="450"/></div><br />
+  <div style="text-align: center;"><div><img src="img/ba-7.png"   width="450"/></div><figcaption>Grafik 8. Engine Vs Mean Price</figcaption><br/></div>
+  Analisis : Semakin besar kapasitas mesin mobil, maka harga jual mobil semakin tinggi.
 - Power Vs Mean Price
-- <div><img src="img/ba-8.png" width="450"/></div><br />
+  <div style="text-align: center;"><div><img src="img/ba-8.png"   width="450"/></div><figcaption>Grafik 9. Power Vs Mean Price</figcaption><br/></div>
+  Analisis : Semakin besar daya mesin mobil, maka harga jual mobil semakin tinggi.
 - Seats Vs Mean Price
-- <div><img src="img/ba-9.png" width="450"/></div><br />
-- Company Vs Mean Price -<div><img src="img/ba-10.png" width="450"/></div><br />
+  <div style="text-align: center;"><div><img src="img/ba-9.png"   width="450"/></div><figcaption>Grafik 10. Seats Vs Mean Price</figcaption><br/></div>
+  Analisis : Semakin banyak jumlah kursi mobil, maka harga jual mobil semakin tinggi.
+- Company Vs Mean Price
+  <div style="text-align: center;"><div><img src="img/ba-10.png"   width="450"/></div><figcaption>Grafik 10. Company Vs Mean Price</figcaption><br/></div>
+  Analisis : Mobil dengan merek Jeep memiliki harga jual yang lebih tinggi dibandingkan dengan merek lainnya.
 - Location
-- <div><img src="img/ba-11.png" width="450"/></div><br />
+  <div style="text-align: center;"><div><img src="img/ba-11.png"   width="450"/></div><figcaption>Grafik 11. Location Vs Mean Price</figcaption><br/></div>
+  Analisis : Mobil yang dijual di kota Coimbatore memiliki harga jual yang lebih tinggi dibandingkan dengan kota lainnya.
 
 ## Data preparation
 
@@ -175,6 +197,8 @@ Berikut hasil evaluasi pada proyek ini :
   | rf | 0.923833 |
 
 - Mean Squared Error (MSE)
-  <div><img src="img/mse.png" width="300"/></div>
+- <div style="text-align: center;"><div><img src="img/mse.png" width="300"/></div><figcaption>Grafik 12. Mean Squared Error</figcaption><br/></div>
+
+## Kesimpulan
 
 Dari hasil evaluasi dapat dilihat bahwa model dengan algoritma Random Forest memiliki akurasi lebih tinggi tinggi dan tingkat error lebih kecil dibandingkan algoritma lainnya dalam proyek ini.
